@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "os.environ.get('SECRET_KEY')"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = int(env("DEBUG", default=0))
@@ -82,28 +82,28 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE"  :  os.environ.get("DB_ENGINE"),
-        "NAME"    :  os.environ.get("DB_NAME"),
-        "USER"    :  os.environ.get("DB_USER"),
-        "PASSWORD":  os.environ.get("DB_PASSWORD"),
-        "HOST"    :  os.environ.get("DB_HOST"),
-        "PORT"    :  os.environ.get("DB_PORT"),
-    }
-}
-
-
 # DATABASES = {
 #     "default": {
-#         "ENGINE"  :  "django.db.backends.postgresql",
-#         "NAME"    :  "railway",
-#         "USER"    :  "postgres",
-#         "PASSWORD":  "2FgJufk3UPlNbJgMCjpN",
-#         "HOST"    :  "containers-us-west-78.railway.app",
-#         "PORT"    :  "6927",
+#         "ENGINE"  :  os.environ.get("DB_ENGINE"),
+#         "NAME"    :  os.environ.get("DB_NAME"),
+#         "USER"    :  os.environ.get("DB_USER"),
+#         "PASSWORD":  os.environ.get("DB_PASSWORD"),
+#         "HOST"    :  os.environ.get("DB_HOST"),
+#         "PORT"    :  os.environ.get("DB_PORT"),
 #     }
 # }
+
+
+DATABASES = {
+    "default": {
+        "ENGINE"  :  "django.db.backends.postgresql",
+        "NAME"    :  "railway",
+        "USER"    :  "postgres",
+        "PASSWORD":  "2FgJufk3UPlNbJgMCjpN",
+        "HOST"    :  "containers-us-west-78.railway.app",
+        "PORT"    :  "6927",
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -183,7 +183,7 @@ TEST_RUNNER = "core.test_runner.CoreTestRunner"
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 
