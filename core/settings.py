@@ -166,7 +166,7 @@ REST_FRAMEWORK = {
 CORS_ALLOW_ALL_ORIGINS=True
 
 # Load the default ones
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1", "http://localhost",  "http://127.0.0.1:3000", "http://localhost:3001", "http://127.0.0.1:3001"]
+CORS_ALLOWED_ORIGINS = ['.vercel.app', '.now.sh',"http://localhost:3000", "http://127.0.0.1", "http://localhost",  "http://127.0.0.1:3000", "http://localhost:3001", "http://127.0.0.1:3001"]
 
 # Leaded from Environment
 CORS_ALLOWED_ORIGINS_ENV = env("CORS_ALLOWED_ORIGINS", default=None)
