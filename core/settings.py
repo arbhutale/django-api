@@ -25,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY', default='insecure-S#perS3crEt_007')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(env("DEBUG", default=0))
+# DEBUG = int(env("DEBUG", default=0))
 
-ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", default="*").split(" ")
+# ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", default="*").split(" ")
 
 # Application definition
 
@@ -166,13 +166,13 @@ REST_FRAMEWORK = {
 CORS_ALLOW_ALL_ORIGINS=True
 
 # Load the default ones
-CORS_ALLOWED_ORIGINS = ['.vercel.app', '.now.sh',"http://localhost:3000", "http://127.0.0.1", "http://localhost",  "http://127.0.0.1:3000", "http://localhost:3001", "http://127.0.0.1:3001"]
+# CORS_ALLOWED_ORIGINS = ['.vercel.app', '.now.sh',"http://localhost:3000", "http://127.0.0.1", "http://localhost",  "http://127.0.0.1:3000", "http://localhost:3001", "http://127.0.0.1:3001"]
 
-# Leaded from Environment
-CORS_ALLOWED_ORIGINS_ENV = env("CORS_ALLOWED_ORIGINS", default=None)
+# # Leaded from Environment
+# CORS_ALLOWED_ORIGINS_ENV = env("CORS_ALLOWED_ORIGINS", default=None)
 
-if CORS_ALLOWED_ORIGINS_ENV:
-    CORS_ALLOWED_ORIGINS += CORS_ALLOWED_ORIGINS_ENV.split(' ')
+# if CORS_ALLOWED_ORIGINS_ENV:
+#     CORS_ALLOWED_ORIGINS += CORS_ALLOWED_ORIGINS_ENV.split(' ')
 
 
 # ##################################################################### #
