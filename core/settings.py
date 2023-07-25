@@ -162,8 +162,8 @@ REST_FRAMEWORK = {
 #  CORS 
 # ##################################################################### #
 
-# CORS_ALLOW_ALL_ORIGINS=True
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
+CORS_ALLOW_ALL_ORIGINS=True
+# ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 # Load the default ones
 # CORS_ALLOWED_ORIGINS = ['.vercel.app', '.now.sh',"http://localhost:3000", "http://127.0.0.1", "http://localhost",  "http://127.0.0.1:3000", "http://localhost:3001", "http://127.0.0.1:3001"]
 
@@ -181,7 +181,7 @@ ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 TESTING = False
 TEST_RUNNER = "core.test_runner.CoreTestRunner"
 
-STATIC_URL = 'static'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
